@@ -1,3 +1,5 @@
+TWGIT_VERSION=1.14.2
+DEB_VERSION=2
 
 clean:
 	rm -rf twgit*deb
@@ -9,4 +11,5 @@ build: clean
 	sed -i 's#TWGIT_HISTORY_ERROR_PATH="$$TWGIT_ROOT_DIR/#TWGIT_HISTORY_ERROR_PATH="$$HOME/.twgit#g' usr/local/share/twgit/conf/twgit-dist.sh
 	sed -i 's#TWGIT_UPDATE_PATH="$$TWGIT_ROOT_DIR/#TWGIT_UPDATE_PATH="$$HOME/.twgit#g' usr/local/share/twgit/conf/twgit-dist.sh
 	sed -i 's#TWGIT_UPDATE_AUTO=1#TWGIT_UPDATE_AUTO=0#g' usr/local/share/twgit/conf/twgit-dist.sh
-	fpm -a all -s dir -t deb -n twgit -v 1.14.2-0ubuntu1 -C . --after-install after-install.sh --before-remove before-remove.sh usr/local/share/twgit/
+	sed 's#local_config_file="${TWGIT_USER_REPOSITORY_ROOT_DIR:-.}/.twgit"#local_config_file="~/.twgit"#g' usr/local/share/twgit/twgit
+	fpm -a all -s dir -t deb -n twgit -v $(TWGIT_VERSION)-0ubuntu$(DEB_VERSION) -C . --after-install after-install.sh --before-remove before-remove.sh usr/local/share/twgit/
