@@ -22,6 +22,7 @@ build: clean
        --maintainer "$(MAINTAINER)" \
        -n twgit \
        -v $(TWGIT_VERSION)-0ubuntu$(DEB_VERSION) \
+       --url https://github.com/Twenga/twgit \
        --depends 'git-core >= 1:1.7.2' \
        -C . \
        --after-install after-install.sh \
