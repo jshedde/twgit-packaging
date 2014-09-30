@@ -32,3 +32,6 @@ build: clean
 publish:
 	scp $(FILE) $(REPOSITORY_HOST):$(REPOSITORY_DIR)/incoming
 	ssh $(REPOSITORY_HOST) reprepro -Vb $(REPOSITORY_DIR) includedeb lucid $(REPOSITORY_DIR)/incoming/$(FILE)
+
+install:
+	sudo dpkg -i $(FILE)
