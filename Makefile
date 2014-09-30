@@ -13,7 +13,6 @@ clean:
 
 build: clean
 	git clone https://github.com/Twenga/twgit usr/local/share/twgit
-	cd usr/local/share/twgit; git checkout v$(TWGIT_VERSION)
 	sed -i 's#TWGIT_HISTORY_LOG_PATH="$$TWGIT_ROOT_DIR/#TWGIT_HISTORY_LOG_PATH="$$HOME/.twgit#g' usr/local/share/twgit/conf/twgit-dist.sh
 	sed -i 's#TWGIT_HISTORY_ERROR_PATH="$$TWGIT_ROOT_DIR/#TWGIT_HISTORY_ERROR_PATH="$$HOME/.twgit#g' usr/local/share/twgit/conf/twgit-dist.sh
 	sed -i 's#TWGIT_UPDATE_PATH="$$TWGIT_ROOT_DIR/#TWGIT_UPDATE_PATH="$$HOME/.twgit#g' usr/local/share/twgit/conf/twgit-dist.sh
