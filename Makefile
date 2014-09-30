@@ -1,5 +1,5 @@
-TWGIT_VERSION=1.14.2
-DEB_VERSION=7
+TWGIT_VERSION=1.15.1
+DEB_VERSION=1
 DESCRIPTION=Twgit is a free and open source assisting tools for managing features, hotfixes and releases on Git repositories.
 MAINTAINER=Jean-Sébastien Hedde <jeanseb@au-fil-du.net>
 
